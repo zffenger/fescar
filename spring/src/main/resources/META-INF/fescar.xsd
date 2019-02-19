@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<xsd:schema xmlns="http://github.com/alibaba/fescar"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://github.com/alibaba/fescar"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+
+    <xsd:annotation>
+        <xsd:documentation>
+            <![CDATA[ Namespace support for the fescar. ]]></xsd:documentation>
+    </xsd:annotation>
+
+
+    <xsd:complexType name="annotationDriverType">
+        <xsd:attribute name="applicationId" type="xsd:ID">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ The unique identifier for the application. ]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="transactionServiceGroup" type="xsd:string" use="optional">
+            <xsd:annotation>
+                <xsd:documentation><![CDATA[ The service group for global transaction. ]]></xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+    </xsd:complexType>
+
+    <xsd:element name="annotation-driver" type="annotationDriverType">
+        <xsd:annotation>
+            <xsd:documentation><![CDATA[ The annotation-driver for @GlobalTransactional ]]></xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
+
+
+</xsd:schema>
